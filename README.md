@@ -1,2 +1,2 @@
 # yt-mp3-download
-Télécharger une musique YouTube seul ou une Playlist (convertis en MP3).
+Télécharger une musique YouTube seule ou en Playlist (convertis en MP3).
