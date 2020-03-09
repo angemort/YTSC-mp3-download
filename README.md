@@ -15,7 +15,7 @@ SCFL (SoundCloud)
 ```sh
 pip install git+https://github.com/flyingrub/scdl
 ```
-FFmpeg
+FFmpeg (conversion)
 ```sh
 apt install ffmpeg
 ```
