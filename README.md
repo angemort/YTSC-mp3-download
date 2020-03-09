@@ -1,7 +1,7 @@
-YouTube Download MP3
+YouTube/SoundCloud Download MP3
 ====================
 ### Description
-Télécharger une musique YouTube seule ou en Playlist (convertis en MP3).
+Télécharger une musique YouTube/SoundCloud seule ou en Playlist (convertis en MP3).
 
 ### Versions
 Python 3.6+
