@@ -22,5 +22,5 @@ apt install ffmpeg
 
 ### Utilisation
 ```sh
-python yt-mp3-download
+python main
 ```
