@@ -7,9 +7,13 @@ Télécharger une musique YouTube seule ou en Playlist (convertis en MP3).
 Python 3.6+
 
 ### Installation
-PYTUBE3
+PYTUBE3 (YouTube)
 ```sh
 pip install pytube3
+```
+SCFL (SoundCloud)
+```sh
+pip install git+https://github.com/flyingrub/scdl
 ```
 FFmpeg
 ```sh
