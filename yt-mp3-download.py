@@ -11,12 +11,6 @@ import subprocess
 
 from pytube import Playlist, YouTube
 
-def format(filename):
-    filtre = { ' ','   ','?' }
-    for fil in filtre:
-        filename.replace(fil, '-')
-    return filename
-
 def run_playlist(pl):
     # download each item in the list
     for video in pl:
@@ -26,7 +20,7 @@ def run_playlist(pl):
         music = yt.streams.first()
 
         # gets the filename of the first audio stream
-        default_filename = format(music.default_filename)
+        default_filename = music.default_filename.replace(' ', '-').replace('   ', '-').replace('(', '-').replace(')', '-')
         # clean text
         print("Downloading " + default_filename + "...")
         
@@ -45,7 +39,7 @@ def run_playlist(pl):
 
 def run_single(yt):
     music = yt.streams.first()
-    default_filename = music.default_filename.replace(' ', '-').replace('   ', '-')
+    default_filename = music.default_filename.replace(' ', '-').replace('   ', '-').replace('(', '-').replace(')', '-')
     print("Downloading " + default_filename + "...")
     yt.streams.first().download(filename=default_filename)
     time.sleep(1)
@@ -59,7 +53,7 @@ def run_single(yt):
     print("Download finished.")
 
 if __name__ == "__main__":
-    options = input("[1] Playlist - [2] Single: ")
+    options = input("[1] Youtube Playlist - [2] Youtube Single - [3] SoundCloud Playlist ou Single: ")
     if options == "1":
         url = input("Please enter the url of the playlist you wish to download: ")
         pl = Playlist(url) #"https://www.youtube.com/playlist?list=PLynhp4cZEpTbRs_PYISQ8v_uwO0_mDg_X"
@@ -69,5 +63,7 @@ if __name__ == "__main__":
         url = input("Please enter the url: ")
         yt = YouTube(url)
         run_single(yt)
-
-
+    elif options == "3":
+        url = input("Please enter the url SoundCloud: ")
+        scdl = ('scdl -l '+url)
+        subprocess.call(scdl, shell=True)
